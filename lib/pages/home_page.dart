@@ -6,8 +6,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.pinkAccent[100],
-      appBar: AppBar(backgroundColor: Colors.pinkAccent[200]),
+      appBar: AppBar(title: Center(child: Text('To-do'))),
     );
   }
 }
