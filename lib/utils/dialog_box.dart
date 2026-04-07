@@ -12,6 +12,7 @@ class DialogBox extends StatelessWidget {
       content: Container(
         height: 120,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             TextField(
               decoration: InputDecoration(
@@ -25,6 +26,8 @@ class DialogBox extends StatelessWidget {
               children: [
                 //Save
                 MyButton(onPressed: () {}, text: "Save"),
+
+                const SizedBox(width: 8),
 
                 //Cancel
                 MyButton(onPressed: () {}, text: "Cancel"),
