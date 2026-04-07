@@ -22,11 +22,24 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  void createNewTask() {
+    showDialog(
+      context: (context),
+      builder: (context) {
+        return AlertDialog();
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(title: const Text('To-do App'), centerTitle: true),
+      floatingActionButton: FloatingActionButton(
+        onPressed: createNewTask,
+        child: Icon(Icons.add),
+      ),
       body: ListView.builder(
         itemCount: todoList.length,
         itemBuilder: (context, index) {
