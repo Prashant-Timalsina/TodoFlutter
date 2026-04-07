@@ -17,13 +17,13 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
 
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.pink,
-          primary: Colors.pink,
-          surface: Colors.pink[50],
+          seedColor: Colors.deepPurple,
+          primary: Colors.deepPurple,
+          surface: Colors.purple[50],
         ),
 
         appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.pink,
+          backgroundColor: Colors.deepPurple,
           foregroundColor: Colors.white,
           elevation: 0,
         ),

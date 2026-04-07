@@ -16,7 +16,7 @@ class TodoTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Padding(
-      padding: const EdgeInsets.all(25.0),
+      padding: const EdgeInsets.only(left: 25.0, right: 25, top: 20),
       child: Container(
         padding: EdgeInsets.all(25),
         decoration: BoxDecoration(
