@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 class TodoTile extends StatelessWidget {
   final String taskName;
@@ -17,32 +18,48 @@ class TodoTile extends StatelessWidget {
     final theme = Theme.of(context);
     return Padding(
       padding: const EdgeInsets.only(left: 25.0, right: 25, top: 20),
-      child: Container(
-        padding: EdgeInsets.all(25),
-        decoration: BoxDecoration(
-          color: theme.colorScheme.primaryContainer,
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: Row(
+      child: Slidable(
+        endActionPane: ActionPane(
+          motion: const StretchMotion(),
           children: [
-            //Checkbox
-            Checkbox(
-              value: taskCompleted,
-              onChanged: onChanged,
-              activeColor: theme.colorScheme.primary,
+            SlidableAction(
+              onPressed: deleteFunction,
+              icon: Icons.delete, // Corrected: lowercase 'icon'
+              backgroundColor: Colors.red,
+              borderRadius: BorderRadius.circular(
+                12,
+              ), // Optional: matches your tile shape
             ),
+          ], // Corrected: closing bracket for children
+        ), // Corrected: closing parenthesis for ActionPane
 
-            //Task name
-            Text(
-              taskName,
-              style: TextStyle(
-                color: theme.colorScheme.onPrimaryContainer,
-                decoration: taskCompleted
-                    ? TextDecoration.lineThrough
-                    : TextDecoration.none,
+        child: Container(
+          padding: const EdgeInsets.all(25),
+          decoration: BoxDecoration(
+            color: theme.colorScheme.primaryContainer,
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Row(
+            children: [
+              // Checkbox
+              Checkbox(
+                value: taskCompleted,
+                onChanged: onChanged,
+                activeColor: theme.colorScheme.primary,
               ),
-            ),
-          ],
+
+              // Task name
+              Text(
+                taskName,
+                style: TextStyle(
+                  color: theme.colorScheme.onPrimaryContainer,
+                  decoration: taskCompleted
+                      ? TextDecoration.lineThrough
+                      : TextDecoration.none,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
