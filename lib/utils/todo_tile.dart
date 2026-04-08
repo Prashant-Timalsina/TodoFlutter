@@ -5,12 +5,14 @@ class TodoTile extends StatelessWidget {
   final String taskName;
   final bool taskCompleted;
   final Function(bool?)? onChanged;
+  final Function(BuildContext)? deleteFunction;
 
   const TodoTile({
     super.key,
     required this.taskName,
     required this.taskCompleted,
     required this.onChanged,
+    required this.deleteFunction,
   });
 
   @override
@@ -26,9 +28,7 @@ class TodoTile extends StatelessWidget {
               onPressed: deleteFunction,
               icon: Icons.delete, // Corrected: lowercase 'icon'
               backgroundColor: Colors.red,
-              borderRadius: BorderRadius.circular(
-                12,
-              ), // Optional: matches your tile shape
+              borderRadius: BorderRadius.circular(12),
             ),
           ], // Corrected: closing bracket for children
         ), // Corrected: closing parenthesis for ActionPane

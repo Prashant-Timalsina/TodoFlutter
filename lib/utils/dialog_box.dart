@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:todo_app/utils/my_button.dart';
 
 class DialogBox extends StatelessWidget {
-  final controller;
+  final TextEditingController controller;
   final VoidCallback onSave;
   final VoidCallback onCancel;
 
@@ -18,7 +18,7 @@ class DialogBox extends StatelessWidget {
     final theme = Theme.of(context);
     return AlertDialog(
       backgroundColor: theme.colorScheme.primaryContainer,
-      content: Container(
+      content: SizedBox(
         height: 120,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
